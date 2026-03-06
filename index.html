@@ -240,7 +240,7 @@ title: Home
             <div class="col-lg-6 mx-auto">
                 
 				{% for org in site.data.partners %}
-				<img src="{{ site.baseurl }}{{ org.image }}" style="padding:10px; max-height: 120px; max-width: 120px;" alt="{{ org.name }}"/>
+				<img src="{{ site.baseurl }}{{ org.image }}" style="padding:10px; max-height: {{ org.max_height | default: '120px' }}; max-width: {{ org.max_width | default: '120px' }};" alt="{{ org.name }}"/>
 				{% endfor %}
                 
             </div>

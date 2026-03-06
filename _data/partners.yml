@@ -2,3 +2,7 @@
   image: /images/iris-hep.png
 - name: Institute for Accelerated AI Algorithms for Data-Driven Discovery 
   image: /images/A3D3.png
+- name: Next Generation Triggers
+  image: /images/ngt_logo.png
+  max_width: 220px
+  max_height: 120px
