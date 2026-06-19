@@ -13,7 +13,7 @@ summary: >-
 
 
   But as the deep learning world evolved to Keras 3, standard QKeras was left waiting for an upgrade. That changes today. Welcome to QKerasV3: completely rewritten from the ground up to bring state-of-the-art quantization directly to Keras 3.
-submitter: Marius Köppel
+submitter: Marius Snella Köppel
 domain: QAT
 image: https://koeppel123.de/assets/img/qkeras-logo-1400.webp
 image_alt: QKerasV3 introduces drop-in quantized layers built specifically for
