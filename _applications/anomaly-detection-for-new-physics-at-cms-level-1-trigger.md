@@ -51,7 +51,7 @@ A custom top-level HLS wrapper was written to interface the hls4ml NN module to 
 The wrapper maps the `struct` data provided by the host system to the array of uniform precision data expected by hls4ml.
 It also enforces full inlining of all code, to help reach the tight 50 ns at 40 MHz requirement.
 
-<img src="https://twiki.cern.ch/twiki/pub/CMSPublic/AXOL1TL2025/axol1tl_floorplan.png" width="500" style="transform: rotate(90deg); transform-origin: center;" />
+<img src="https://twiki.cern.ch/twiki/pub/CMSPublic/AXOL1TL2025/axol1tl_floorplan.png" width="300" style="transform: rotate(90deg); transform-origin: center;" />
 
 AXOL1TL has taken data at CMS throughout 2024, 2025, and 2026 data taking periods.
 We predict how efficient AXOL1TL is at detecting some hypothesised new physics scenarios by evaluating it on simulated examples of those scenarios.
