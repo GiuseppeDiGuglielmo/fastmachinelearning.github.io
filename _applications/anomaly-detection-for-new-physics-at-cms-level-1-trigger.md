@@ -19,7 +19,7 @@ tags:
   - anomaly detection
   - trigger
   - "hls4ml "
-review_status: draft
+review_status: approved
 ---
 
 AXOL1TL (Anomaly eXtraction Online Level-1 Trigger Lightweight) is an ultra low latency anomaly detection algorithm deployed at the CMS experiment Level-1 Trigger.
