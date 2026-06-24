@@ -39,7 +39,7 @@ On the Fast ML side, the network is trained with quantization-aware training in 
 
 <img src="{{ site.baseurl }}/images/applications/hgcal_asic_application.png" width="500" alt="autoencoder neural network architecture and data flow for the baseline encoder model" />
 
-The digital design comes down to three blocks: a converter that normalizes the inputs, the hls4ml encoder, and the I²C peripheral that stores and updates the weights. Timing is set by the LHC clock — a new input arrives every 25 ns, and the chip produces its result within two bunch crossings, for a total inference latency of 50 ns. We carried the design all the way through synthesis and physical layout in a low-power 65 nm CMOS process.
+The digital design comes down to three blocks: a converter that normalizes the inputs, the hls4ml encoder, and the I²C peripheral that stores and updates the weights. Timing is set by the LHC clock: a new input arrives every 25 ns, and the chip produces its result within two bunch crossings, for a total inference latency of 50 ns. We carried the design all the way through synthesis and physical layout in a low-power 65 nm CMOS process.
 
 <img src="{{ site.baseurl }}/images/applications/hgcal_asic_floorplan.png" width="500" alt="design floor-plan with integrated converter, encoder and I²C peripheral occupying a total area of 3.6 mm²" />
 
@@ -47,4 +47,4 @@ Living inside the detector also means surviving radiation, and that shaped the i
 
 <img src="{{ site.baseurl }}/images/applications/hgcal_asic_tmr.png" width="500" alt="triple modular redundancy scheme: each register is triplicated with a majority voter for the encoder and converter datapath" />
 
-The final design lands at 50 ns latency, 2.38 nJ per inference, 95 mW, and 3.6 mm². Compared against an equivalent fully unrolled FPGA implementation, that's more than an order of magnitude less power, and lower latency as well. To our knowledge it's the first radiation-tolerant, on-detector neural network ASIC for particle physics — and, for this community, a complete Fast ML story end to end: from quantization-aware training, through hls4ml and Catapult HLS, to a validated and radiation-hardened layout.
+The final design lands at 50 ns latency, 2.38 nJ per inference, 95 mW, and 3.6 mm². Compared against an equivalent fully unrolled FPGA implementation, that's more than an order of magnitude less power, and lower latency as well. To our knowledge it's the first radiation-tolerant, on-detector neural network ASIC for particle physics, and for this community a complete Fast ML story end to end: from quantization-aware training, through hls4ml and Catapult HLS, to a validated and radiation-hardened layout.
