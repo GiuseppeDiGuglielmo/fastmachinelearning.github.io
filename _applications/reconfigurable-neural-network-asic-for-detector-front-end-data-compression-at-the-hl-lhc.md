@@ -9,7 +9,7 @@ affiliation: Fermilab
 tools_used:
   - hls4ml
   - QKeras
-  - Catapult HLS
+  - Siemens Catapult HLS
 tags:
   - cms
   - hgcal
