@@ -32,6 +32,7 @@ This application demonstrates a reconfigurable neural network ASIC for front-end
 The target task is lossy compression of the energy pattern from a single HGCAL sensor module before transmission to the off-detector trigger electronics.
 Each silicon sensor module provides 48 trigger-cell charge values; the front-end concentrator ASIC must reduce this information while preserving the most important features of the detector energy profile.
 
+<!-- fig 1 -->
 <img src="/images/applications/hgcal_asic_flow.png" width="500" alt="block diagram of the HGCAL trigger path showing where the on-detector encoder fits in the data flow" />
 
 The machine-learning algorithm is based on an autoencoder.
@@ -44,7 +45,8 @@ The ASIC architecture is fixed after fabrication, but the neural network weights
 This allows different compression algorithms to be loaded for different detector regions, sensor geometries, occupancies, or changing detector and collider conditions.
 In this way, the design preserves some of the flexibility usually associated with programmable logic while targeting the lower power and latency of a custom ASIC.
 
-<img src="/images/applications/PLACEHOLDER_hgcal_asic_architecture.png" width="500" alt="[PLACEHOLDER: ASIC architecture diagram showing the three main digital blocks: input converter, hls4ml encoder, and I2C configuration peripheral]" />
+<!-- fig 3 -->
+<img src="/images/applications/hgcal_asic_application.png" width="500" alt="autoencoder neural network architecture and data flow for the baseline encoder model" />
 
 The neural network was trained with quantization-aware training using QKeras, then translated to hardware with hls4ml and Catapult HLS.
 The baseline encoder combines a convolutional layer and a dense layer, using fixed-point arithmetic to meet the tight area, power, and latency constraints of front-end detector electronics.
@@ -54,13 +56,15 @@ The real-time requirements are set by the LHC bunch-crossing period.
 The ASIC accepts a new input every 25 ns and adds a total inference latency of two bunch crossings, corresponding to 50 ns.
 The design was implemented in a 65 nm low-power CMOS process and processed through synthesis and physical layout flows.
 
-<img src="/images/applications/PLACEHOLDER_hgcal_asic_floorplan.png" width="500" alt="[PLACEHOLDER: physical layout floorplan of the ASIC showing the placement of the three digital blocks in 65 nm CMOS]" />
+<!-- fig 6 -->
+<img src="/images/applications/hgcal_asic_floorplan.png" width="500" alt="design floor-plan with integrated converter, encoder and I²C peripheral occupying a total area of 3.6 mm²" />
 
 Because the ASIC is intended for the HL-LHC detector environment, radiation tolerance is part of the implementation strategy.
 The design targets a total ionizing dose environment of approximately 200 Mrad.
 Single-event effects are mitigated using triple modular redundancy: the encoder and converter datapath use triplicated registers with majority voting, while the I²C peripheral, which stores the neural-network parameters, uses full module triplication with autocorrection.
 
-<img src="/images/applications/PLACEHOLDER_hgcal_asic_tmr.png" width="500" alt="[PLACEHOLDER: diagram illustrating the triple modular redundancy strategy applied to the datapath registers and the I2C peripheral]" />
+<!-- fig 7 (encoder/converter TMR) or fig 8 (I2C full module triplication) -->
+<img src="/images/applications/hgcal_asic_tmr.png" width="500" alt="triple modular redundancy scheme: each register is triplicated with a majority voter for the encoder and converter datapath" />
 
 The final simulated implementation achieves a latency of 50 ns, an energy consumption of 2.38 nJ per inference, a power consumption of 95 mW, and an area of 3.6 mm².
 Compared with an estimated fully unrolled FPGA implementation, the ASIC provides more than an order-of-magnitude improvement in power while also reducing latency.
