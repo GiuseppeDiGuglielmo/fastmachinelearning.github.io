@@ -4,7 +4,7 @@ title: Reconfigurable Neural Network ASIC for Detector Front-End Data Compressio
 summary: A radiation-tolerant neural network ASIC implementing a quantized autoencoder for low-latency lossy data compression in the CMS High-Granularity Calorimeter at the HL-LHC.
 submitter: Giuseppe Di Guglielmo
 domain: "LHC detector front-end"
-image: /images/applications/hgcal_asic_flow.png
+image: /images/applications/hgcal_asic_econ.png
 affiliation: Fermilab
 tools_used:
   - hls4ml
